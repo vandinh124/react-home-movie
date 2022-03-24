@@ -10,6 +10,8 @@ import { useHomeFetch } from '../../hooks/useHomeFetch';
 //components
 import HeroImage from '../HeroImage/HeroImage';
 import Grid from '../Grid/Grid';
+import Thumb from '../Thumb/Thumb';
+
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
   console.log(state);
@@ -24,7 +26,16 @@ const Home = () => {
       )}
       <Grid header='Popular Movies'>
         {state.results.map((movie) => (
-          <div key={movie.id}>{movie.title}</div>
+          <Thumb
+            key={movie.id}
+            clickable={true}
+            image={
+              movie.poster_path
+                ? `${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.poster_path}`
+                : NoImage
+            }
+            movieId={movie.id}
+          />
         ))}
       </Grid>
     </>
