@@ -11,6 +11,7 @@ import { useHomeFetch } from '../../hooks/useHomeFetch';
 import HeroImage from '../HeroImage/HeroImage';
 import Grid from '../Grid/Grid';
 import Thumb from '../Thumb/Thumb';
+import { Spinner } from '../Spinner/Spinner.styles';
 
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
@@ -38,6 +39,7 @@ const Home = () => {
           />
         ))}
       </Grid>
+      <Spinner />
     </>
   );
 };
