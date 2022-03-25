@@ -36,7 +36,7 @@ const Movie = () => {
         {movie.actors.map((actor) => (
           <Actor
             key={actor.credit_id}
-            name={actor.name}
+            name={10}
             character={actor.character}
             imageUrl={
               actor.profile_path

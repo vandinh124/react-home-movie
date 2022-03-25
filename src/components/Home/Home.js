@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 //Config
-import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../../config';
-//API
-import API from '../../API';
+import { BACKDROP_SIZE, IMAGE_BASE_URL } from '../../config';
 //image
 import NoImage from '../../images/no_image.jpg';
 //hooks
