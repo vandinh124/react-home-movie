@@ -10,7 +10,7 @@ const SearchBar = ({ setSearchTerm }) => {
   const [state, setState] = useState('');
   //initial is {} and useRef will create a mutable variable
   const initial = useRef(true); // initial.current = true
-  console.log(initial.current);
+
   useEffect(() => {
     //to skip initial in useEffect
     if (initial.current) {

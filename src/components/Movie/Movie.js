@@ -18,7 +18,7 @@ const Movie = () => {
   //get the param from the link path='/:movieId'
   const { movieId } = useParams();
   //rename state to movie
-  console.log(movieId);
+  // console.log(movieId);
   const { state: movie, loading, error } = useMovieFetch(movieId);
 
   if (loading) return <Spinner />;
@@ -36,7 +36,7 @@ const Movie = () => {
         {movie.actors.map((actor) => (
           <Actor
             key={actor.credit_id}
-            name={10}
+            name={actor.name}
             character={actor.character}
             imageUrl={
               actor.profile_path
