@@ -4,7 +4,8 @@ import { useParams } from 'react-router-dom';
 import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 //Components
 import Grid from '../Grid/Grid';
-import { Spinner } from '../Spinner/Spinner';
+import Spinner from '../Spinner/Spinner';
+import BreadCrumb from '../BreadCrumb/BreadCrumb';
 //Hook
 import useMovieFetch from '../../hooks/useMovieFetch';
 //Image
@@ -16,7 +17,14 @@ const Movie = () => {
   //rename state to movie
   console.log(movieId);
   const { state: movie, loading, error } = useMovieFetch(movieId);
-  return <>Movie</>;
+
+  if (loading) return <Spinner />;
+  if (error) return <div>Somthing went wrong ... </div>;
+  return (
+    <>
+      <BreadCrumb movieTitle={movie.original_title} />
+    </>
+  );
 };
 
 export default Movie;
